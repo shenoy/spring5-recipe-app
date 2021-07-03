@@ -2,6 +2,7 @@ package guru.springframework.spring5recipeapp.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -27,6 +28,7 @@ public class Recipe {
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes = new Notes();
 
+    @ToString.Exclude
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
     private Set<Ingredient> ingredients= new HashSet<>();
 
