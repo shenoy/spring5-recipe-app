@@ -61,6 +61,11 @@
             <artifactId>bootstrap</artifactId>
             <version>3.3.7-1</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.14.Final</version>
+        </dependency>
 
     </dependencies>
 
@@ -69,6 +74,24 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <formats>
+                        <format>html</format>
+                        <format>xml</format>
+                    </formats>
+                    <reportSets>
+                        <reportSet>
+                            <reports>
+                                <report>cobertura</report>
+                            </reports>
+                        </reportSet>
+                    </reportSets>
+                </configuration>
             </plugin>
 
             <plugin>
